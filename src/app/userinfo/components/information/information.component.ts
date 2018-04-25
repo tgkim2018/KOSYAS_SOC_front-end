@@ -13,7 +13,8 @@ export class InformationComponent implements OnInit {
   Company = "KOSYAS";
   password    = "";
   repassword  = "";
-  phone       = "";
+  Phone       = "83)10-1234-5678";
+  Country     = "Republic of KOREA";
 
   constructor() { }
 

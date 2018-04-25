@@ -1,3 +1,35 @@
-<p>
-  elastalert works!
-</p>
+<div class="animated fadeIn">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card">
+        <div class="card-header">
+          <i class="fa fa-th-list"></i>
+          <strong>Create Rule</strong>
+        </div>
+        <div class="card-body">
+
+          <div class="form-group row">
+            <label class="col-md-2 form-control-label" for="text-input">Rule Subject</label>
+            <div class="col-md-9">
+              <input type="text" id="text-input" name="text-input" class="form-control" placeholder="Rule subject">
+              <span class="help-block">Please Insert Rule/Template's Subject.</span>
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <label class="col-md-2 form-control-label" for="textarea-input">yaml</label>
+            <div class="col-md-9">
+              <textarea id="textarea-input" name="textarea-input" rows="9" class="form-control" placeholder="yaml Content.."></textarea>
+              <span class="help-block">Please Insert Rule/Template's yaml Content.</span>
+            </div>
+          </div>
+
+          <div class="card-footer">
+              <button type="submit" class="btn btn-sm btn-primary"><i class="fa fa-dot-circle-o"></i> Save</button>
+              <button type="reset" class="btn btn-sm btn-danger"><i class="fa fa-ban"></i> Cancel</button>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
