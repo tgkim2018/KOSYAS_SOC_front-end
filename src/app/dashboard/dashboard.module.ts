@@ -12,6 +12,7 @@ import { VulnerabilityComponent } from './components/vulnerability/vulnerability
 import { SystemComponent } from './components/system/system.component';
 import { FulllogsComponent } from './components/fulllogs/fulllogs.component';
 import { DashboardService } from './dashboard.service';
+import { OverviewComponent } from './components/overview/overview.component';
 
 @NgModule({
   imports: [
@@ -20,7 +21,7 @@ import { DashboardService } from './dashboard.service';
     ChartsModule,
     routing
   ],
-  declarations: [ DashboardComponent, IntrusionComponent, VulnerabilityComponent, SystemComponent, FulllogsComponent ],
+  declarations: [ DashboardComponent, IntrusionComponent, VulnerabilityComponent, SystemComponent, FulllogsComponent, OverviewComponent ],
   providers: [DashboardService]
 })
 export class DashboardModule { }

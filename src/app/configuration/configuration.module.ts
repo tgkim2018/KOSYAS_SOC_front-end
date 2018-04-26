@@ -1,10 +1,9 @@
-import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 
-//import { HttpModule } from '@angular/http';
 import { HttpClientModule } from '@angular/common/http';
+//import { HttpClient } from '@angular/common/http';
 
 import { routing }   from './configuration.routes';
 import { ConfigurationComponent } from './configuration.component';
@@ -16,9 +15,10 @@ import { ConfigurationService } from './configuration.service';
 @NgModule({
   imports: [
     //NgModule,
-    //BrowserModule,
+    CommonModule,
     FormsModule,
     //HttpModule,
+    //HttpClient,
     HttpClientModule,
     routing
   ],

@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ConfigurationService } from '../../configuration.service';
-import { BaseService } from '../../../base.service';
-import { CelebroOverview, CelebroOverview_Data} from '../../../base.service';
+import { CelebroOverview, CelebroOverview_Data} from '../../celebro.data';
 
 @Component({
   selector: 'app-system',
@@ -18,16 +17,18 @@ export class SystemComponent implements OnInit {
   docs = 51349322;
   disk = "19.2gb"
   celebroData :CelebroOverview;
+  celebroOverviewData : CelebroOverview_Data;
 
-  //constructor(private configurationService:ConfigurationService, private baseService:BaseService) { }
-  constructor() { }
+  constructor(private configurationService:ConfigurationService) { }
+  //constructor() { }
 
   ngOnInit() {
-    //this.getCelebroOverview();
+    this.getCelebroOverview();
   }
 
   getCelebroOverview(){
-    //this.configurationService.getCelebroOverview().subscribe(Data => this.celebroData = Data);
-   // this.baseService.getCelebroOverview().subscribe(Data => this.celebroData = Data);
+    //this.configurationService.getCelebroOverview().subscribe(celebroData => this.celebroData = celebroData);
+    this.celebroData = this.configurationService.getCelebroOverview();
+    this.celebroOverviewData = this.celebroData.data;
   }
 }

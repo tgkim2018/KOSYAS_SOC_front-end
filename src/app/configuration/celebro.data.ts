@@ -1,5 +1,5 @@
 /* Elasticsearch like Celebro */
-export interface CelebroOverview_data {
+export interface CelebroOverview_Data {
     node: number;
     indices: number;
     shards: number;
@@ -9,5 +9,5 @@ export interface CelebroOverview_data {
 
 export interface CelebroOverview {
     error: string;
-    data: CelebroOverview_data;
+    data: CelebroOverview_Data;
 }

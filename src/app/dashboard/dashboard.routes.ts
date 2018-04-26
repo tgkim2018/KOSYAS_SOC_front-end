@@ -4,6 +4,7 @@ import { IntrusionComponent } from './components/intrusion/intrusion.component';
 import { VulnerabilityComponent } from './components/vulnerability/vulnerability.component';
 import { SystemComponent } from './components/system/system.component';
 import { FulllogsComponent } from './components/fulllogs/fulllogs.component';
+import { OverviewComponent } from './components/overview/overview.component';
 
 const routes: Routes = [
     {
@@ -13,6 +14,11 @@ const routes: Routes = [
             title: 'Dashboard'
         },
         children: [
+            {
+                path: 'overview',
+                component: OverviewComponent,
+                data: { title: 'Overview' }
+            },
             {
                 path: 'intrusion',
                 component: IntrusionComponent,

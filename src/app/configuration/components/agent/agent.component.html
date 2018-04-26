@@ -1,26 +1,44 @@
 <div class="animated fadeIn">
   <div class="row">
-    <div class="col-6 col-lg-4">
+    <div class="col-6 col-lg-6">
       <div class="card">
         <div class="card-body p-3 clearfix">
+
+          <!--<div *ngIf="managerStatus.data['ossec-authd']==='running'; else elseStatus">-->
+
+          <div *ngIf="managerStatus.data['ossec-authd']==='running'; else elseStatus">
+            <i class="icon-check bg-success p-4 font-2xl mr-3 float-right"></i>
+            <div class="h5 text-success mb-0 mt-2">Wazuh Manager Status</div>
+            <div class="h5 text-muted mb-0 mt-2">connect</div>
+          </div>
+
+          <ng-template #elseStatus>
+            <i class="icon-check bg-danger p-4 font-2xl mr-3 float-right"></i>
+            <div class="h5 text-danger mb-0 mt-2">Wazuh Manager Status</div>
+            <div class="h5 text-muted mb-0 mt-2">disconnect</div>
+          </ng-template>
+          <!--
           <i class="icon-check bg-success p-4 font-2xl mr-3 float-right"></i>
           <div class="h5 text-success mb-0 mt-2">Wazuh Manager Status</div>
           <div class="h5 text-muted mb-0 mt-2">connect</div>
+        -->
+
         </div>
       </div>
     </div>
     <!--/.col-->
-    <div class="col-6 col-lg-4">
+    <div class="col-6 col-lg-6">
       <div class="card">
         <div class="card-body p-3 clearfix">
-          <i class="icon-energy p-4 font-2xl mr-3 float-left"></i>
+          <i class="icon-energy bg-primary p-4 font-2xl mr-3 float-left"></i>
           <div class="h5 text-primary mb-0 mt-2">Total Agent Connect</div>
           <div class="h5 text-muted mb-0 mt-2">
-            <strong>4</strong>&nbsp;Count</div>
+            <strong>{{wazuhAgentListCount}}</strong>&nbsp;Count</div>
         </div>
       </div>
     </div>
     <!--/.col-->
+    <!--
     <div class="col-6 col-lg-4">
       <div class="card">
         <div class="card-body p-3 clearfix">
@@ -31,6 +49,7 @@
         </div>
       </div>
     </div>
+    -->
     <!--/.col-->
     <div class="col-lg-12">
       <div class="card">
@@ -50,6 +69,24 @@
               </tr>
             </thead>
             <tbody>
+              <tr *ngFor="let wazuhAgentListItem of wazuhAgentListItems">
+                <td ngif="wazuhAgentListItem.status==='Active';else elseAgentStop">
+                  <div class="text-success p-0">
+                    <i class="fa fa-check-circle"></i>
+                  </div>
+                </td>
+                <ng-template #elseAgentStop>
+                  <div class="text-danger p-0">
+                    <i class="fa fa-exclamation-circle"></i>
+                  </div>
+                </ng-template>
+                <td>{{wazuhAgentListItem.id }}</td>
+                <td>{{wazuhAgentListItem.name }}</td>
+                <td>{{wazuhAgentListItem.ip }}</td>
+                <td>{{wazuhAgentListItem.os.platform }}</td>
+                <td>{{wazuhAgentListItem.version }}</td>
+              </tr>
+              <!--
               <tr>
                 <td>
                   <div class="text-success p-0">
@@ -64,9 +101,9 @@
               </tr>
               <tr>
                 <td>
-                    <div class="text-success p-0">
-                        <i class="fa fa-check-circle"></i>
-                      </div>
+                  <div class="text-success p-0">
+                    <i class="fa fa-check-circle"></i>
+                  </div>
                 </td>
                 <td>001</td>
                 <td>115</td>
@@ -76,9 +113,9 @@
               </tr>
               <tr>
                 <td>
-                    <div class="text-success p-0">
-                        <i class="fa fa-check-circle"></i>
-                      </div>
+                  <div class="text-success p-0">
+                    <i class="fa fa-check-circle"></i>
+                  </div>
                 </td>
                 <td>002</td>
                 <td>agent125</td>
@@ -88,9 +125,9 @@
               </tr>
               <tr>
                 <td>
-                    <div class="text-danger p-0">
-                        <i class="fa fa-exclamation-circle"></i>
-                      </div>
+                  <div class="text-danger p-0">
+                    <i class="fa fa-exclamation-circle"></i>
+                  </div>
                 </td>
                 <td>200</td>
                 <td>test</td>
@@ -98,9 +135,10 @@
                 <td>RedHat</td>
                 <td>Wazuh v3.2.1</td>
               </tr>
+              -->
             </tbody>
           </table>
-         
+
         </div>
       </div>
     </div>
