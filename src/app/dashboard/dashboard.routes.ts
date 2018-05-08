@@ -17,7 +17,7 @@ const routes: Routes = [
             {
                 path: 'overview',
                 component: OverviewComponent,
-                data: { title: 'Overview' }
+               data: { title: 'Overview' }
             },
             {
                 path: 'intrusion',
@@ -38,7 +38,8 @@ const routes: Routes = [
                 path: 'fulllogs',
                 component: FulllogsComponent,
                 data: { title: 'Full Logs' }
-            }
+            },
+            {path: '',redirectTo: 'overview', pathMatch: 'full' }
         ]
     }
 ];

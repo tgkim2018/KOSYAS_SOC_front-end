@@ -7,16 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ElastalertComponent implements OnInit {
 
-  public select:string;
-  public ruleData:string;
-  public ruleName:string;
-
   constructor() { }
 
   ngOnInit() {
-    this.select = "list";
-    this.ruleData = "";
-    this.ruleName = "";
   }
 
 }
